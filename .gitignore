@@ -1,0 +1,13 @@
+.venv/
+.env/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+build/
+.idea/
+
+# macos
+.DS_Store
