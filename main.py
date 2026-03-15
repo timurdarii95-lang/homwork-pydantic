@@ -52,14 +52,6 @@ COURSES = [
     )
 ]
 
-def __init__(self, id, title, trainer, description, duration_weeks):
-    self.id             = id
-    self.title          = title
-    self.trainer        = trainer
-    self.description    = description
-    self.duration_weeks = duration_weeks
-
-
 class CourseRequest(BaseModel):
     id: int
     title: str
