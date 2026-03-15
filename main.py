@@ -66,10 +66,9 @@ class CourseRequest(BaseModel):
     trainer: str
     description: str
     duration_weeks: int
-
-@app.get('/courses')
-async def read_all_courses():
-    return COURSES
+@app.get("/")
+def home():
+    return {"message": "BUNA ZIUA!"}
 
 @app.get('/courses')
 async def read_all_courses():
