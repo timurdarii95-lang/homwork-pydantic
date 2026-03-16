@@ -1,5 +1,4 @@
 from email.policy import default
-from pydantic import BaseModel
 
 from fastapi import FastAPI, Body,  HTTPException, Path, Query
 from pydantic import BaseModel
