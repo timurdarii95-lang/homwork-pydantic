@@ -2,7 +2,7 @@ from email.policy import default
 
 from fastapi import FastAPI, Body,  HTTPException, Path, Query
 from pydantic import BaseModel
-
+from datetime import datetime
 
 app = FastAPI()
 
@@ -57,6 +57,23 @@ class CourseRequest(BaseModel):
     trainer: str
     description: str
     duration_weeks: int
+
+@app.get("/")
+def greet():
+    hour = datetime.now().hour
+
+    if 5 <= hour < 12:
+        message = "Bună dimineața!"
+    elif 12 <= hour < 18:
+        message = "Bună ziua!"
+    elif 18 <= hour < 23:
+        message = "Bună seara!"
+    else:
+        message = "Noapte bună!"
+
+    return {"message": message}
+
+
 @app.get("/")
 def home():
     return {"message": "BUNA ZIUA!"}
